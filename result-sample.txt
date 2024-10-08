@@ -1,0 +1,86 @@
+vscode ➜ /workspaces/scapy-test $ sudo python main.py 
+---summary---
+Ether / IP / TCP 172.17.0.4:51540 > 1.1.1.1:telnet S
+---show---
+###[ Ethernet ]###
+  dst       = 02:42:26:5e:96:0d
+  src       = 02:42:ac:11:00:04
+  type      = IPv4
+###[ IP ]###
+     version   = 4
+     ihl       = 5
+     tos       = 0x10
+     len       = 60
+     id        = 3996
+     flags     = DF
+     frag      = 0
+     ttl       = 64
+     proto     = tcp
+     chksum    = 0x7cf9
+     src       = 172.17.0.4
+     dst       = 1.1.1.1
+     \options   \
+###[ TCP ]###
+        sport     = 51540
+        dport     = telnet
+        seq       = 2360744860
+        ack       = 0
+        dataofs   = 10
+        reserved  = 0
+        flags     = S
+        window    = 64240
+        chksum    = 0xae45
+        urgptr    = 0
+        options   = [('MSS', 1460), ('SAckOK', b''), ('Timestamp', (485012493, 0)), ('NOP', None), ('WScale', 7)]
+
+None
+---raw---
+b'\x02B&^\x96\r\x02B\xac\x11\x00\x04\x08\x00E\x10\x00<\x0f\x9c@\x00@\x06|\xf9\xac\x11\x00\x04\x01\x01\x01\x01\xc9T\x00\x17\x8c\xb6\x1b\x9c\x00\x00\x00\x00\xa0\x02\xfa\xf0\xaeE\x00\x00\x02\x04\x05\xb4\x04\x02\x08\n\x1c\xe8\xb4\r\x00\x00\x00\x00\x01\x03\x03\x07'
+
+---type/Ether---
+<class 'scapy.layers.l2.Ether'>
+---type/IP---
+<class 'scapy.layers.inet.IP'>
+---type/TCP---
+<class 'scapy.layers.inet.TCP'>
+
+---IP/len---
+60
+---IP/src---
+172.17.0.4
+---IP/dst---
+1.1.1.1
+
+---TCP/sport---
+51540
+---TCP/dport---
+23
+
+---IP/ls---
+version    : BitField  (4 bits)                  = 4               ('4')
+ihl        : BitField  (4 bits)                  = 5               ('None')
+tos        : XByteField                          = 16              ('0')
+len        : ShortField                          = 60              ('None')
+id         : ShortField                          = 3996            ('1')
+flags      : FlagsField                          = <Flag 2 (DF)>   ('<Flag 0 ()>')
+frag       : BitField  (13 bits)                 = 0               ('0')
+ttl        : ByteField                           = 64              ('64')
+proto      : ByteEnumField                       = 6               ('0')
+chksum     : XShortField                         = 31993           ('None')
+src        : SourceIPField                       = '172.17.0.4'    ('None')
+dst        : DestIPField                         = '1.1.1.1'       ('None')
+options    : PacketListField                     = []              ('[]')
+--
+sport      : ShortEnumField                      = 51540           ('20')
+dport      : ShortEnumField                      = 23              ('80')
+seq        : IntField                            = 2360744860      ('0')
+ack        : IntField                            = 0               ('0')
+dataofs    : BitField  (4 bits)                  = 10              ('None')
+reserved   : BitField  (3 bits)                  = 0               ('0')
+flags      : FlagsField                          = <Flag 2 (S)>    ('<Flag 2 (S)>')
+window     : ShortField                          = 64240           ('8192')
+chksum     : XShortField                         = 44613           ('None')
+urgptr     : ShortField                          = 0               ('0')
+options    : TCPOptionsField                     = [('MSS', 1460), ('SAckOK', b''), ('Timestamp', (485012493, 0)), ('NOP', None), ('WScale', 7)] ("b''")
+None
+-------------------------------
